@@ -33,6 +33,21 @@ dragging, so that app's own middle-drag behaviour still works.
 
 ## Install
 
+Download the latest `MiddleMove-<version>.dmg` (or the `.zip`) from the
+[Releases page](https://github.com/arabinda-g/move_window_with_middle_click/releases/latest),
+open it, and drag **MiddleMove.app** into **Applications**. Universal binary
+(Apple Silicon + Intel), macOS 13 or later.
+
+The app is signed with a self-signed local certificate, **not** a Developer ID, so it
+isn't notarized and Gatekeeper will block it on first open. Either right-click the app
+→ **Open** → **Open**, or clear the quarantine flag:
+
+```sh
+xattr -dr com.apple.quarantine /Applications/MiddleMove.app
+```
+
+Or build and install it yourself:
+
 ```sh
 ./build.sh release
 ditto build/MiddleMove.app /Applications/MiddleMove.app
